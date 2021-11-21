@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<style>
+		div.categoryMenu {
+			width: 200px;
+			background-color: #e2e2e2;
+			margin-left: 20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		div.categoryMenu a {
+			color: #000000;
+		}
+		div.categoryMenu a:hover {
+			color: lightskyblue;
+			text-decoration: none;
+		}
+		div.productsAsideCategorys {
+			width: 800px;
+			height: 510px;
+			background-color: white;
+			margin-left: 220px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+		div.productsAsideCategorys div.row {
+			margin: 20px 80px 0 80px;
+		}
+		div.productsAsideCategorys div.row div.seperator {
+			margin-top: 20px;
+			border-bottom: 1px dashed #e7e7e7;
+		}
+		div.productsAsideCategorys a  {
+			color: #999999;
+			font-size: 14px;
+			margin: 8px;
+		}
+		div.productsAsideCategorys a:hover {
+			color: #C40000;
+			text-decoration: none;
+		}
+		div.eachCategory {
+			line-height: 30px;
+			padding-left: 10px;
+			font-size: 14px;
+		}
+		div.eachCategory span {
+			margin-right: 10px;
+		}
+		div.eachCategory:hover {
+			background-color: white;
+		}
+	</style>
+	<script>
+		function showProductsAsideCategorys(cid) {
+		    $("div.eachCategory[cid=" + cid + "]").css("backgroundColor", "white");
+            $("div.eachCategory[cid=" + cid + "]").css("color", "#87CEFA");
+            $("div.productsAsideCategorys[cid=" + cid + "]").show();
+        }
+        function hideProductsAsideCategorys(cid) {
+            $("div.eachCategory[cid=" + cid + "]").css("backgroundColor", "#e2e2e2");
+            $("div.eachCategory[cid=" + cid + "]").css("color", "#000000");
+            $("div.productsAsideCategorys[cid=" + cid + "]").hide();
+        }
+        $(function () {
+            $("div.eachCategory").mouseenter(function () {
+                var cid = $(this).attr("cid");
+                showProductsAsideCategorys(cid);
+            });
+            $("div.eachCategory").mouseleave(function () {
+                var cid = $(this).attr("cid");
+                hideProductsAsideCategorys(cid);
+            });
+            $("div.productsAsideCategorys").mouseenter(function () {
+                var cid = $(this).attr("cid");
+                showProductsAsideCategorys(cid);
+            });
+            $("div.productsAsideCategorys").mouseleave(function () {
+                var cid = $(this).attr("cid");
+                hideProductsAsideCategorys(cid);
+            });
+        });
+	</script>
+</head>
+<body>
+	<div class="categoryWithCarousel">
+		<div style="position: relative">
+			<div class="categoryMenu ">
+				<div class="eachCategory" cid="83">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						平板电视
+					</a>
+				</div>
+				<div class="eachCategory" cid="82">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						马桶
+					</a>
+				</div>
+				<div class="eachCategory" cid="81">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						沙发
+					</a>
+				</div>
+				<div class="eachCategory" cid="80">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						电热水器
+					</a>
+				</div>
+				<div class="eachCategory" cid="79">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						平衡车
+					</a>
+				</div>
+				<div class="eachCategory" cid="78">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						扫地机器人
+					</a>
+				</div>
+				<div class="eachCategory" cid="77">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						原汁机
+					</a>
+				</div>
+				<div class="eachCategory" cid="76">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						冰箱
+					</a>
+				</div>
+				<div class="eachCategory" cid="75">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						空调
+					</a>
+				</div>
+				<div class="eachCategory" cid="74">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						女表
+					</a>
+				</div>
+				<div class="eachCategory" cid="73">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						男表
+					</a>
+				</div>
+				<div class="eachCategory" cid="72">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						男士手拿包
+					</a>
+				</div>
+				<div class="eachCategory" cid="71">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						男士西服
+					</a>
+				</div>
+				<div class="eachCategory" cid="69">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						时尚男鞋
+					</a>
+				</div>
+				<div class="eachCategory" cid="68">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						品牌女装
+					</a>
+				</div>
+				<div class="eachCategory" cid="64">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						太阳镜
+					</a>
+				</div>
+				<div class="eachCategory" cid="60">
+					<span class="glyphicon glyphicon-link"></span>
+					<a href="#nowhere">
+						安全座椅
+					</a>
+				</div>
+			</div>
+		</div>
+		<div style="position: relative;left: 0;top: 0;">
+			<div class="productsAsideCategorys" cid="83" style="display: none;">
+				<div class="row ">
+					<a href="#nowhere">
+						屏大影院
+					</a>
+					<a href="#nowhere">
+						周末
+					</a>
+					<a href="#nowhere">
+						新品特惠
+					</a>
+					<a href="#nowhere">
+						32吋电视机
+					</a>
+					<a href="#nowhere">
+						智能网络
+					</a>
+					<div class="seperator"></div>
+				</div>
+				<div class="row ">
+					<a href="#nowhere">
+						USB高清解
+					</a>
+					<a href="#nowhere">
+						芒果TV在线
+					</a>
+					<a href="#nowhere">
+						抢购价
+					</a>
+					<a href="#nowhere">
+						USB解码
+					</a>
+					<a href="#nowhere">
+						32英吋
+					</a>
+					<a href="#nowhere">
+						10核
+					</a>
+					<a href="#nowhere">
+						TCL品牌日
+					</a>
+					<div class="seperator"></div>
+				</div>
+				<div class="row ">
+					<a href="#nowhere">
+						不要赠品
+					</a>
+					<a href="#nowhere">
+						新品上市
+					</a>
+					<a href="#nowhere">
+						4K硬屏
+					</a>
+					<a href="#nowhere">
+						领100元券
+					</a>
+					<a href="#nowhere" style="color: rgb(135, 206, 250);">
+						智能高清
+					</a>
+					<a href="#nowhere">
+						8月，酷暑
+					</a>
+					<a href="#nowhere" style="color: rgb(135, 206, 250);">
+						8月大促
+					</a>
+					<a href="#nowhere">
+						天猫定制
+					</a>
+					<div class="seperator"></div>
+				</div>
+				<div class="row ">
+					<a href="#nowhere">
+						智能操作系统
+					</a>
+					<a href="#nowhere">
+						金色外观
+					</a>
+					<a href="#nowhere">
+						三星屏幕
+					</a>
+					<a href="#nowhere">
+						客厅爆款
+					</a>
+					<a href="#nowhere">
+						八核配置
+					</a>
+					<a href="#nowhere">
+						限时特惠
+					</a>
+					<div class="seperator"></div>
+				</div>
+				<div class="row ">
+					<a href="#nowhere">
+						限时特惠
+					</a>
+					<a href="#nowhere">
+						热销爆款
+					</a>
+					<a href="#nowhere">
+						4K全高清
+					</a>
+					<a href="#nowhere" style="color: rgb(135, 206, 250);">
+						六核智能
+					</a>
+					<a href="#nowhere">
+						14核4K
+					</a>
+					<a href="#nowhere">
+						YUNOS
+					</a>
+					<a href="#nowhere" style="color: rgb(135, 206, 250);">
+						YUNOS
+					</a>
+					<a href="#nowhere">
+						64位处理器
+					</a>
+					<div class="seperator"></div>
+				</div>
+				<div class="row ">
+					<a href="#nowhere">
+						YUNOS
+					</a>
+					<a href="#nowhere">
+						微信电视
+					</a>
+					<a href="#nowhere">
+						4k超清
+					</a>
+					<a href="#nowhere">
+						64位真4K
+					</a>
+					<a href="#nowhere">
+						10核机芯
+					</a>
+					<a href="#nowhere">
+						V字黑釉底座
+					</a>
+					<a href="#nowhere">
+						4K超清
+					</a>
+					<div class="seperator"></div>
+				</div>
+				<div class="row ">
+					<a href="#nowhere">
+						64位14核
+					</a>
+					<a href="#nowhere">
+						海量影视
+					</a>
+					<a href="#nowhere">
+						人气爆款
+					</a>
+					<a href="#nowhere">
+						限时特惠
+					</a>
+					<a href="#nowhere">
+						真4K屏
+					</a>
+					<a href="#nowhere">
+						65吋巨屏
+					</a>
+					<a href="#nowhere" style="color: rgb(135, 206, 250);">
+						4K超清视界
+					</a>
+					<a href="#nowhere">
+						限时特惠
+					</a>
+					<div class="seperator"></div>
+				</div>
+				<div class="row ">
+					<a href="#nowhere">
+						55寸旗舰
+					</a>
+					<a href="#nowhere">
+						4K机皇
+					</a>
+					<a href="#nowhere">
+						曲面机皇
+					</a>
+					<a href="#nowhere" style="color: rgb(135, 206, 250);">
+						轻薄4K
+					</a>
+					<div class="seperator"></div>
+				</div>
+			</div>
+		</div>
+		<div style="height:510px;"></div>
+	</div>
+</body>
+</html>

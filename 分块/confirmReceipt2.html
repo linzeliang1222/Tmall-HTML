@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<style>
+		div.confirmPayPageDiv {
+			max-width: 1013px;
+			margin: 10px auto;
+		}
+		div.confirmPayOrderDetailDiv {
+			margin: 40px;
+		}
+		table.confirmPayOrderDetailTable {
+			width: 100%;
+			border-top: 1px solid #DDDDDD;
+		}
+		table.confirmPayOrderDetailTable td {
+			padding: 8px;
+			font-size: 14px;
+			color: black;
+		}
+		span.confirmPayOrderDetailWangWangGif {
+			display: inline-block;
+			width: 67px;
+			height: 22px;
+			background-image: url("https://how2j.cn/tmall/img/site/wangwang.gif");
+			background-repeat: no-repeat;
+			background-color: transparent;
+			position: relative;
+			left: 2px;
+		}
+		div.confirmPayButtonDiv {
+			border: 1px solid #F58B0F;
+			margin: 20px;
+		}
+		div.confirmPayWarning {
+			margin: 20px 80px;
+			font-size: 18px;
+			color: red;
+			font-weight: bold;
+		}
+		button.confirmPayButton {
+			margin: 20px 80px;
+			width: 67px;
+			height: 30px;
+			border: 1px solid #E67C00;
+			background-color: #F4A21D;
+			border-radius: 4px;
+			color: white;
+			font-size: 12px;
+			outline: none;
+		}
+		button.confirmPayButton:hover {
+			background-color: #F6AE30;
+		}
+	</style>
+</head>
+<body>
+	<div class="confirmPayPageDiv">
+		<div class="confirmPayOrderDetailDiv">
+			<table class="confirmPayOrderDetailTable">
+				<tbody>
+					<tr>
+						<td>订单编号：</td>
+						<td>201609141114454899001 <img src="https://how2j.cn/tmall/img/site/confirmOrderTmall.png"
+						                               width="23px"></td>
+					</tr>
+					<tr>
+						<td>卖家昵称：</td>
+						<td>天猫商铺 <span class="confirmPayOrderDetailWangWangGif"></span></td>
+					</tr>
+					<tr>
+						<td>收货信息：</td>
+						<td>北京市 朝阳区 天安门 4栋二单元 490，朝阳群众， 15800000000，10000</td>
+					</tr>
+					<tr>
+						<td>成交时间：</td>
+						<td>2016-09-14 11:14:45</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="confirmPayButtonDiv">
+			<div class="confirmPayWarning">请收到货后，再确认收货！否则您可能钱货两空！</div>
+			<a href="#nowhere">
+				<button class="confirmPayButton">确认支付</button>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

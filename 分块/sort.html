@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<style>
+		div.categoryPageDiv {
+			max-width: 1013px;
+			margin: 10px auto;
+		}
+		div.categorySortBar {
+			background-color: #FAF9F9;
+			margin: 40px 20px 20px 20px;
+			padding: 4px;
+		}
+		table.categorySortBarTable {
+			border-collapse: collapse;
+			display: inline-block;
+		}
+		table.categorySortBarTable span.glyphicon {
+			font-size: 10px;
+		}
+		table.categorySortBarTable td {
+			height: 17px;
+			font-size: 12px;
+			border: 1px solid #CCCCCC;
+			padding: 3px;
+		}
+		table.categorySortBarTable td.grayColumn {
+			background-color: #F1EDEC;
+		}
+		table.categorySortBarTable td a {
+			color: #806F66;
+			text-decoration: none;
+		}
+		table.categorySortBarTable td:hover {
+			background-color: #F1EDEC;
+		}
+		table.categorySortBarTable td a:hover {
+			color: #C40000;
+			text-decoration: none;
+		}
+		table.categorySortBarTable input {
+			border: none;
+			height: 15px;
+			width: 50px;
+			outline: none;
+			padding-left: 5px;
+		}
+		table.categorySortBarTable td.priceMiddleColumn {
+			width: 5px;
+			vertical-align: middle;
+			color: #CCCCCC;
+		}
+		body {
+			font-size: 12px;
+			font-family: Arial;
+		}
+	</style>
+	<script>
+        $(function(){
+            $("input.sortBarPrice").keyup(function(){
+                var num= $(this).val();
+                if(num.length==0){
+                    $("div.productUnit").show();
+                    return;
+                }
+
+                num = parseInt(num);
+                if(isNaN(num))
+                    num= 1;
+                if(num<=0)
+                    num = 1;
+                $(this).val(num);
+
+                var begin = $("input.beginPrice").val();
+                var end = $("input.endPrice").val();
+                if(!isNaN(begin) && !isNaN(end)){
+                    $("div.productUnit").hide();
+                    $("div.productUnit").each(function(){
+                        var price = $(this).attr("price");
+                        price = new Number(price);
+                        if(price<=end && price>=begin)
+                            $(this).show();
+                    });
+                }
+
+            });
+        });
+	</script>
+</head>
+<body>
+	<div class="categoryPageDiv">
+		<img src="https://how2j.cn/tmall/img/category/72.jpg">
+		<div class="categorySortBar">
+			<table class="categorySortBarTable categorySortTable">
+				<tbody>
+					<tr>
+						<td class="grayColumn"><a href="#nowhere">综合<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="#nowhere">人气<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="#nowhere">新品<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="#nowhere">销量<span class="glyphicon glyphicon-arrow-down"></span></a></td>
+						<td><a href="#nowhere">价格<span class="glyphicon glyphicon-resize-vertical"></span></a></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="categorySortBarTable">
+				<tbody>
+					<tr>
+						<td><input type="text" placeholder="请输入" class="sortBarPrice beginPrice"></td>
+						<td class="grayColumn priceMiddleColumn">-</td>
+						<td><input type="text" placeholder="请输入" class="sortBarPrice endPrice"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

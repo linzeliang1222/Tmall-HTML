@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<title>评价页面</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<style>
+		body {
+			font-size: 12px;
+			font-family: Arial;
+		}
+		
+		.redColor {
+			color: #C40000 !important;
+		}
+		
+		nav.top {
+			background-color: #f2f2f2;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid #e7e7e7;
+		}
+		
+		nav.top span, nav.top a {
+			color: #999999;
+			margin: 0px 10px 0px 10px;
+		}
+		
+		nav.top a:hover {
+			color: #C40000;
+			text-decoration: none;
+		}
+		
+		.simpleSearchDiv {
+			background-color: #C40000;
+			margin: 10px 20px 40px 0;
+			width: 300px;
+			height: 40px;
+			display: block;
+			padding: 1px;
+		}
+		
+		.simpleSearchDiv input {
+			width: 225px;
+			height: 34px;
+			margin: 2px;
+			border: 1px solid transparent;
+			outline: none;
+			padding-left: 10px;
+		}
+		
+		.simpleSearchDiv button {
+			width: 60px;
+			background-color: #C40000;
+			font-size: 14px;
+			color: white;
+			border: 1px solid transparent;
+			vertical-align: middle;
+			outline: none;
+		}
+		
+		img.simpleLogo {
+			position: absolute;
+			top: 50px;
+			left: 10px;
+			width: 140px;
+		}
+		
+		.searchBelow {
+			margin-top: 3px;
+			margin-left: -20px;
+		}
+		
+		.searchBelow span {
+			color: #999999;
+		}
+		
+		.searchBelow a {
+			padding: 0 20px 0 20px;
+			font-size: 14px;
+		}
+		
+		a {
+			color: #999999;
+		}
+		
+		a:hover {
+			color: #C40000;
+			text-decoration: none;
+		}
+		
+		.searchDiv {
+			background-color: #C40000;
+			width: 400px;
+			height: 40px;
+			padding: 1px;
+			display: block;
+			margin: 50px auto;
+		}
+		
+		.searchDiv input {
+			width: 275px;
+			height: 36px;
+			margin: 1px;
+			border: 1px solid transparent;
+			outline: none;
+			padding-left: 10px;
+		}
+		
+		.searchDiv button {
+			width: 110px;
+			border: 1px solid transparent;
+			background-color: #C40000;
+			outline: none;
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+			vertical-align: middle;
+		}
+		
+		.searchBelow {
+			margin-top: 3px;
+			margin-left: -20px;
+		}
+		
+		.searchBelow span {
+			color: #999999;
+		}
+		
+		.searchBelow a {
+			padding: 0 20px 0 20px;
+			font-size: 14px;
+		}
+		
+		img.logo {
+			position: absolute;
+			left: 0px;
+			top: 30px;
+			z-index: -1;
+		}
+		
+		div.footer {
+			margin: 0px 0px;
+			border-top: 1px solid #e7e7e7;
+		}
+		
+		div.footer_ensure {
+			margin: 24px 0 24px 0;
+			text-align: center;
+		}
+		
+		div.footer_desc {
+			border-top: 1px solid #e7e7e7;
+			margin: 0px 20px;
+			padding-top: 30px;
+		}
+		
+		div.footer_desc div.descColumn {
+			width: 20%;
+			float: left;
+			padding-left: 15px;
+		}
+		
+		div.footer_desc div.descColumn span.descColumnTitle {
+			color: #646464;
+			font-weight: bold;
+			font-size: 16px;
+		}
+		
+		div.footer_desc a {
+			display: block;
+			padding-top: 3px;
+		}
+		
+		div.copyright {
+			background-color: #000000;
+			border-top: 2px solid #C40000;
+		}
+		
+		div.copyright span.slash {
+			color: #ffffff;
+		}
+		
+		div.footer div.copyright div.white_link a {
+			color: #ffffff;
+			padding: 0px 5px;
+		}
+		
+		div.footer div.copyright div.white_link {
+			padding: 10px 0px;
+			margin-left: 10px;
+		}
+		
+		div.license {
+			margin-left: 10px;
+			padding-bottom: 30px;
+		}
+		
+		div.license span {
+			color: #A4A4A4;
+		}
+		
+		div.license div.copyRightYear {
+			margin: 10px 0;
+			color: #686868;
+		}
+		
+		img.cateye {
+			margin-left: 20px;
+		}
+		
+		div.reviewDiv {
+			max-width: 1013px;
+			margin: 10px auto;
+		}
+		
+		div.reviewProductInfoImg {
+			border: 1px solid #E7E7E7;
+			width: 464px;
+			text-align: center;
+			float: left;
+		}
+		
+		div.reviewProductInfoRightDiv {
+			overflow: hidden;
+			padding: 30px 20px;
+		}
+		
+		div.reviewProductInfoRightText {
+			color: black;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		
+		table.reviewProductInfoTable {
+			margin: 20px 10px;
+			font-size: 12px;
+		}
+		
+		table.reviewProductInfoTable td {
+			padding-bottom: 5px;
+			color: #999999;
+		}
+		
+		span.reviewProductInfoTablePrice {
+			color: #C40000;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		
+		span.reviewProductInfoTableSellNumber {
+			color: #C40000;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		
+		div.reviewProductInfoRightBelowDiv {
+			border: 1px solid #F6F5F3;
+			background-color: #FDFBFA;
+			height: 166px;
+			padding: 16px 0 16px 81px;
+		}
+		
+		span.reviewProductInfoRightBelowImg {
+			background-color: white;
+			border: 1px solid #E1E1E1;
+			display: inline-block;
+			width: 23px;
+			height: 42px;
+			background-image: url("https://how2j.cn/tmall/img/site/reviewLight.png");
+			background-repeat: no-repeat;
+			padding: 0;
+		}
+		
+		span.reviewProductInfoRightBelowText {
+			border: 1px solid #EFEFEF;
+			display: inline-block;
+			width: 200px;
+			height: 42px;
+			padding: 4px;
+			top: -7px;
+			left: -4px;
+			position: relative;
+			color: #666666;
+			font-size: 12px;
+		}
+		
+		img.reviewProductImg {
+			width: 400px;
+			height: 400px;
+		}
+		
+		div.reviewDiv {
+			max-width: 1013px;
+			margin: 10px auto;
+		}
+		
+		div.reviewStasticsDiv {
+			margin-top: 20px;
+		}
+		
+		div.reviewStasticsLeft {
+			width: 180px;
+			float: left;
+		}
+		
+		div.reviewStasticsLeftTop {
+			background-color: #C40000;
+			height: 6px;
+		}
+		
+		div.reviewStasticsLeftContent {
+			line-height: 29px;
+			border-left: 1px solid #D5D4D4;
+			border-right: 1px solid #D5D4D4;
+			background-color: #F6F5F1;
+			font-weight: bold;
+			text-align: center;
+			font-size: 14px;
+			color: #363535;
+		}
+		
+		div.reviewStasticsLeftFoot {
+			height: 6px;
+			border-left: 1px solid #D5D4D4;
+			border-bottom: 1px solid #D5D4D4;
+			background-color: #F6F5F1;
+		}
+		
+		span.reviewStasticsNumber {
+			color: #284CA5;
+		}
+		
+		div.reviewStasticsRight {
+			overflow: hidden;
+		}
+		
+		div.reviewStasticsRightEmpty {
+			height: 35px;
+		}
+		
+		div.reviewStasticsFoot {
+			background-color: #F6F5F1;
+			border: 1px solid #D5D4D4;
+			border-left-width: 0;
+			height: 6px;
+		}
+		
+		div.makeReviewDiv {
+			border: 1px solid #D1CCC8;
+			margin: 20px 0;
+			background-color: #EFEFEF;
+		}
+		
+		div.makeReviewText {
+			font-size: 16px;
+			color: #333333;
+			font-weight: bold;
+			margin: 20px 40px;
+		}
+		
+		table.makeReviewTable {
+			margin: 20px 40px;
+			font-size: 12px;
+		}
+		
+		table.makeReviewTable td {
+			border: 1px solid #E7E7E7;
+			padding: 10px;
+			background-color: white;
+		}
+		
+		table.makeReviewTable textarea {
+			border: 0;
+			resize: none;
+			width: 420px;
+			height: 120px;
+			outline: none;
+		}
+		
+		td.makeReviewTableFirstTD {
+			background-color: #F6F6F6;
+		}
+		
+		div.makeReviewButtonDiv {
+			background-color: white;
+			text-align: center;
+			padding: 15px;
+		}
+		
+		div.makeReviewButtonDiv button {
+			width: 72px;
+			height: 26px;
+			border-radius: 2px;
+			background-color: #C40000;
+			color: white;
+			border-width: 0;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<nav class="top">
+		<a href="#nowhere">
+			<span class="glyphicon glyphicon-home redColor"></span>
+			天猫首页
+		</a>
+		
+		<span>喵，欢迎来到天猫</span>
+		<a href="#nowhere">请登录</a>
+		<a href="#nowhere">免费注册</a>
+		
+		<span class="pull-right">
+			<a href="#nowhere">我的订单</a>
+			<a href="#nowhere">
+				<span class="glyphicon glyphicon-shopping-cart redColor"></span>
+				购物车<storage>0</storage>件
+			</a>
+		</span>
+	</nav>
+	
+	<div>
+		<a href="#nowhere"><img class="simpleLogo" src="https://how2j.cn/tmall/img/site/simpleLogo.png"></a>
+	</div>
+	<div class="simpleSearchDiv pull-right">
+		<input placeholder="平衡车 原汁机" type="text">
+		<button type="submit">搜天猫</button>
+		<div class="searchBelow">
+			<span>
+				<a href="#nowhere">冰箱</a>
+				<span>|</span>
+			</span>
+			<span>
+				<a href="#nowhere">空调</a>
+				<span>|</span>
+			</span>
+			<span>
+				<a href="#nowhere">男表</a>
+				<span>|</span>
+			</span>
+			<span>
+				<a href="#nowhere">女表</a>
+			</span>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	
+	<div class="reviewDiv">
+		<div class="reviewProductInfoDiv">
+			<div class="reviewProductInfoImg"><img class="reviewProductImg" height="100px"
+			                                       src="https://how2j.cn/tmall/img/productSingle/8697.jpg"
+			                                       width="100px"></div>
+			<div class="reviewProductInfoRightDiv">
+				<div class="reviewProductInfoRightText">
+					2016夏季新款女装雪纺衫短裤两件套 韩版时尚名媛休闲套装女夏装
+				</div>
+				<table class="reviewProductInfoTable">
+					<tbody>
+						<tr>
+							<td width="75px">价格:</td>
+							<td><span class="reviewProductInfoTablePrice">￥263.00</span> 元</td>
+						</tr>
+						<tr>
+							<td>配送</td>
+							<td>快递: 0.00</td>
+						</tr>
+						<tr>
+							<td>月销量:</td>
+							<td><span class="reviewProductInfoTableSellNumber">50</span> 件</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="reviewProductInfoRightBelowDiv">
+					<span class="reviewProductInfoRightBelowImg"><img1
+							src="https://how2j.cn/tmall/img/site/reviewLight.png"></img1></span>
+					<span class="reviewProductInfoRightBelowText">现在查看的是 您所购买商品的信息
+于2016年09月12下单购买了此商品 </span>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		
+		<div class="reviewStasticsDiv">
+			<div class="reviewStasticsLeft">
+				<div class="reviewStasticsLeftTop"></div>
+				<div class="reviewStasticsLeftContent">累计评价 <span class="reviewStasticsNumber"> 13</span></div>
+				<div class="reviewStasticsLeftFoot"></div>
+			</div>
+			<div class="reviewStasticsRight">
+				<div class="reviewStasticsRightEmpty"></div>
+				<div class="reviewStasticsFoot"></div>
+			</div>
+		</div>
+		<div class="makeReviewDiv">
+			<form  method="post">
+				<div class="makeReviewText">其他买家，需要你的建议哦！</div>
+				<table class="makeReviewTable">
+					<tbody><tr>
+						<td class="makeReviewTableFirstTD">评价商品</td>
+						<td><textarea name="content"></textarea></td>
+					</tr>
+					</tbody></table>
+				<div class="makeReviewButtonDiv">
+					<input type="hidden" value="952" name="oid">
+					<input type="hidden" value="256" name="pid">
+					<button type="button">提交评价</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	</div>
+	
+	<div class="footer" id="footer" style="display: block;">
+		<div class="footer_ensure" id="footer_ensure">
+			<a href="#nowhere">
+				<img src="https://how2j.cn/tmall/img/site/ensure.png">
+			</a>
+		</div>
+		<div class="footer_desc" id="footer_desc">
+			<div class="descColumn">
+				<span class="descColumnTitle">购物指南</span>
+				<a href="#nowhere">免费注册</a>
+				<a href="#nowhere">开通支付宝</a>
+				<a href="#nowhere">支付宝充值</a>
+			</div>
+			<div class="descColumn">
+				<span class="descColumnTitle">天猫保障</span>
+				<a href="#nowhere">发票保障</a>
+				<a href="#nowhere">售后规则</a>
+				<a href="#nowhere">缺货赔付</a>
+			</div>
+			<div class="descColumn">
+				<span class="descColumnTitle">支付方式</span>
+				<a href="#nowhere">快捷支付</a>
+				<a href="#nowhere">信用卡</a>
+				<a href="#nowhere">蚂蚁花呗</a>
+				<a href="#nowhere">货到付款</a>
+			</div>
+			<div class="descColumn">
+				<span class="descColumnTitle">商家服务</span>
+				<a href="#nowhere">商家入驻</a>
+				<a href="#nowhere">商家中心</a>
+				<a href="#nowhere">天猫智库</a>
+				<a href="#nowhere">天猫规则</a>
+				<a href="#nowhere">物流服务</a>
+				<a href="#nowhere">喵言喵语</a>
+				<a href="#nowhere">运营服务</a>
+			</div>
+			<div class="descColumn">
+				<span class="descColumnTitle">手机天猫</span>
+				<a href="#nowhere"><img src="https://how2j.cn/tmall/img/site/ma.png"></a>
+			</div>
+		</div>
+		<div style="clear:both"></div>
+		
+		<img class="cateye" id="cateye" src="https://how2j.cn/tmall/img/site/cateye.png">
+		<div class="copyright" id="copyright">
+			<div class="white_link">
+				<a href="#nowhere">关于天猫</a>
+				<a href="#nowhere"> 帮助中心</a>
+				<a href="#nowhere">开放平台</a>
+				<a href="#nowhere"> 诚聘英才</a>
+				<a href="#nowhere">联系我们</a>
+				<a href="#nowhere">网站合作</a>
+				<a href="#nowhere">法律声明</a>
+				<a href="#nowhere">知识产权</a>
+				<a href="#nowhere"> 廉正举报 </a>
+			</div>
+			<div class="white_link">
+				<a href="#nowhere"> 阿里巴巴集团</a><span class="slash">|</span>
+				<a href="#nowhere"> 淘宝网</a><span class="slash">|</span>
+				<a href="#nowhere">天猫 </a><span class="slash">|</span>
+				<a href="#nowhere"> 聚划算</a><span class="slash">|</span>
+				<a href="#nowhere">全球速卖通</a><span class="slash">|</span>
+				<a href="#nowhere">阿里巴巴国际交易市场</a><span class="slash">|</span>
+				<a href="#nowhere">1688</a><span class="slash">|</span>
+				<a href="#nowhere">阿里妈妈</a><span class="slash">|</span>
+				<a href="#nowhere"> 阿里旅行·去啊 </a><span class="slash">|</span>
+				<a href="#nowhere"> 阿里云计算 </a><span class="slash">|</span>
+				<a href="#nowhere"> 阿里通信 </a><span class="slash">|</span>
+				<a href="#nowhere"> YunOS </a><span class="slash">|</span>
+				<a href="#nowhere"> 阿里旅行·去啊 </a><span class="slash">|</span>
+				<a href="#nowhere"> 万网 </a><span class="slash">|</span>
+				<a href="#nowhere"> 高德 </a><span class="slash">|</span>
+				<a href="#nowhere"> 优视 </a><span class="slash">|</span>
+				<a href="#nowhere"> 友盟 </a><span class="slash">|</span>
+				<a href="#nowhere"> 虾米 </a><span class="slash">|</span>
+				<a href="#nowhere"> 天天动听 </a><span class="slash">|</span>
+				<a href="#nowhere"> 来往 </a><span class="slash">|</span>
+				<a href="#nowhere"> 钉钉 </a><span class="slash">|</span>
+				<a href="#nowhere"> 支付宝 </a>
+			</div>
+			<div class="license">
+				<span>增值电信业务经营许可证： 浙B2-20110446</span>
+				<span>网络文化经营许可证：浙网文[2015]0295-065号</span>
+				<span>互联网医疗保健信息服务 审核同意书 浙卫网审【2014】6号 </span>
+				<span>互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</span>
+				<div class="copyRightYear">© 2003-2016 TMALL.COM 版权所有</div>
+				<div>
+					<img src="https://how2j.cn/tmall/img/site/copyRight1.jpg">
+					<img src="https://how2j.cn/tmall/img/site/copyRight2.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

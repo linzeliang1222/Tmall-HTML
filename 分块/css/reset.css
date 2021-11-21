@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color:  inherit;
+}
+a:hover {
+}
+sup {
+    vertical-align: text-top;
+}
+sub {
+    vertical-align: text-bottom;
+}
+legend {
+    color: #000;
+}
+fieldset, img {
+    border: 0;
+}
+button, input, select, textarea {
+    font-size: 100%;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* 隐藏滚动条 */
+::-webkit-scrollbar { /* Chrome */
+    display: none;
+}

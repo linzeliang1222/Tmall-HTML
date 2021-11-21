@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+	<style>
+		div.reviewDiv {
+			max-width: 1013px;
+			margin: 10px auto;
+		}
+		div.reviewStasticsDiv {
+			margin-top: 20px;
+		}
+		div.reviewStasticsLeft {
+			width: 180px;
+			float: left;
+		}
+		div.reviewStasticsLeftTop {
+			background-color: #C40000;
+			height: 6px;
+		}
+		div.reviewStasticsLeftContent {
+			line-height: 29px;
+			border-left: 1px solid #D5D4D4;
+			border-right: 1px solid #D5D4D4;
+			background-color: #F6F5F1;
+			font-weight: bold;
+			text-align: center;
+			font-size: 14px;
+			color: #363535;
+		}
+		div.reviewStasticsLeftFoot {
+			height: 6px;
+			border-left: 1px solid #D5D4D4;
+			border-bottom: 1px solid #D5D4D4;
+			background-color: #F6F5F1;
+		}
+		span.reviewStasticsNumber {
+			color: #284CA5;
+		}
+		div.reviewStasticsRight {
+			overflow: hidden;
+		}
+		div.reviewStasticsRightEmpty {
+			height: 35px;
+		}
+		div.reviewStasticsFoot {
+			background-color: #F6F5F1;
+			border: 1px solid #D5D4D4;
+			border-left-width: 0;
+			height: 6px;
+		}
+		div.makeReviewDiv {
+			border: 1px solid #D1CCC8;
+			margin: 20px 0;
+			background-color: #EFEFEF;
+		}
+		div.makeReviewText {
+			font-size: 16px;
+			color: #333333;
+			font-weight: bold;
+			margin: 20px 40px;
+		}
+		table.makeReviewTable {
+			margin: 20px 40px;
+			font-size: 12px;
+		}
+		table.makeReviewTable td {
+			border: 1px solid #E7E7E7;
+			padding: 10px;
+			background-color: white;
+		}
+		table.makeReviewTable textarea {
+			border: 0;
+			resize: none;
+			width: 420px;
+			height: 120px;
+			outline: none;
+		}
+		td.makeReviewTableFirstTD {
+			background-color: #F6F6F6;
+		}
+		div.makeReviewButtonDiv {
+			background-color: white;
+			text-align: center;
+			padding: 15px;
+		}
+		div.makeReviewButtonDiv button {
+			width: 72px;
+			height: 26px;
+			border-radius: 2px;
+			background-color: #C40000;
+			color: white;
+			border-width: 0;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="reviewDiv">
+		<div class="reviewStasticsDiv">
+			<div class="reviewStasticsLeft">
+				<div class="reviewStasticsLeftTop"></div>
+				<div class="reviewStasticsLeftContent">累计评价 <span class="reviewStasticsNumber"> 13</span></div>
+				<div class="reviewStasticsLeftFoot"></div>
+			</div>
+			<div class="reviewStasticsRight">
+				<div class="reviewStasticsRightEmpty"></div>
+				<div class="reviewStasticsFoot"></div>
+			</div>
+		</div>
+		<div class="makeReviewDiv">
+			<form  method="post">
+				<div class="makeReviewText">其他买家，需要你的建议哦！</div>
+				<table class="makeReviewTable">
+					<tbody><tr>
+						<td class="makeReviewTableFirstTD">评价商品</td>
+						<td><textarea name="content"></textarea></td>
+					</tr>
+					</tbody></table>
+				<div class="makeReviewButtonDiv">
+					<input type="hidden" value="952" name="oid">
+					<input type="hidden" value="256" name="pid">
+					<button type="button">提交评价</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
